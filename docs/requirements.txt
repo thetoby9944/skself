@@ -1,0 +1,9 @@
+sphinx
+recommonmark
+sphinx-markdown-tables
+sphinx-autoapi
+pydata-sphinx-theme
+sphinx-bootstrap-theme
+sphinx-autobuild
+sphinxcontrib-httpdomain
+sphinxcontrib-bibtex
