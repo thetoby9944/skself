@@ -3,7 +3,6 @@ import shutil
 from pathlib import Path
 from typing import Tuple, List
 
-import cv2
 import numpy as np
 import tensorflow as tf
 from tqdm import tqdm
@@ -110,18 +109,6 @@ def combine_binary_masks(mask_1, mask_2):
                     message="thirdasserstion")
     return result
 
-
-def blend_merge(foreground, background, mask):
-    mask = cv2.GaussianBlur(
-        np.array(mask * 255, dtype=np.uint8),
-        tuple([3] * 2), 0  # mask.shape[0] // 16 + 1
-    )
-    mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
-    mask = mask.astype('float32') / 255
-    foreground = cv2.multiply(foreground, mask, dtype=cv2.CV_8U)
-    background = cv2.multiply(background, (1 - mask), dtype=cv2.CV_8U)
-    output = cv2.add(foreground, background)
-    return output
 
 
 def validate_images(path: Path):
