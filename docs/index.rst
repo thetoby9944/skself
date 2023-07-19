@@ -16,7 +16,7 @@ Table of Contents
    :maxdepth: 4
    :titlesonly:
 
-   API Reference <autoapi/tfds_defect_detection/index>
+   API Reference <autoapi/skself/index>
 
 
 

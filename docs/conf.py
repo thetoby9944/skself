@@ -16,15 +16,15 @@ import shutil
 import sys
 from pathlib import Path
 
-sys.path.insert(0, os.path.abspath('../tfds_defect_detection'))
+sys.path.insert(0, os.path.abspath('../skself'))
 # sys.path.insert(0, os.path.abspath('../../modules/'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'TFDS Defect Detection'
-copyright = '2022, Tobias Schiele'
-author = 'Tobias Schiele'
+project = 'skself - Self-supervised learning sklearn-stlyle'
+copyright = '2023, Tobias Schiele'
+author = 'Tobias Schiele, Daria Kern, Urlich Klauck'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1.0'
@@ -68,7 +68,7 @@ source_suffix = {
 
 autoapi_type = 'python'
 autoapi_dirs = [
-    "../tfds_defect_detection",
+    "../skself",
     # "../../modules/"
 ]
 autoapi_ignore = []  # "*/lib/*", "*/playground/*", "*/model/*", "*/models/*", "*/nima/*", "*/qtclient/*", "*webclient/config*"]
@@ -120,11 +120,11 @@ html_favicon = 'images/icon.png'
 html_sidebars = {'index': ["search-field.html", 'sidebar-nav-bs.html']}
 
 html_theme_options = {
-    "github_url": "https://github.com/thetoby9944/tfds_defect_detection",
+    "github_url": "https://github.com/thetoby9944/skself",
     "icon_links": [
         {
             "name": "PyPI",
-            "url": "https://pypi.org/project/tfds_defect_detection",
+            "url": "https://pypi.org/project/skself",
             "icon": "fas fa-box",
         },
     ],
@@ -140,7 +140,7 @@ html_theme_options = {
 
 html_context = {
     "github_user": "thetoby9944",
-    "github_repo": "tfds_defect_detection",
+    "github_repo": "skself",
     "github_version": "master",
     "doc_path": "docs",
 }
@@ -152,10 +152,10 @@ html_context = {
 #   'manual': 'ausarbeitung',
 # }
 
-asset_src = Path("../tfds_defect_detection/assets/images")
+asset_src = Path("../skself/assets/images")
 
 for dst in [
-    Path("tfds_defect_detection/assets/images"),
+    Path("skself/assets/images"),
     Path("assets/images"),
     Path("images"),
 ]:
@@ -169,11 +169,11 @@ for dst in [
         pass
 
 latex_documents = [
-    (master_doc, 'master.tex', u'TFDS Defect Detection',
+    (master_doc, 'master.tex', u'SKSELF',
      u'Tobias Schiele', 'report'),  # "report"
 ]
 
-latex_logo = 'tfds_defect_detection/assets/images/logo.png'
+latex_logo = 'skself/assets/images/logo.png'
 latex_engine = 'lualatex'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
@@ -374,7 +374,7 @@ latex_elements = {
             \end{figure}
 
             \par \rule{\textwidth}{0.2pt}
-            \par\Huge\textsc{TFDS Defect Detection - Self- and semi supervised leanring for industrial defect detection using MVTEC and VisA}%
+            \par\Huge\textsc{SKSELF - Self-supervised learning sklearn-style}%
             \par\rule[1ex]{\textwidth}{0.2pt}
             \par \large \color{black}%%		
             \large Tobias Schiele %

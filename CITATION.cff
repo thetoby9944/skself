@@ -3,6 +3,10 @@ message: "If you use this software, please cite it as below."
 authors:
   - family-names: Schiele
     given-names: Tobias
-title: "TFDS DD - Datasets for Defect Detection"
+  - family-names: Kern
+    given-names: Daria
+  - family-names: Klauck
+    given-names: Ulrich
+title: "skself - Self-supervised learning sklearn-style"
 version: 0.1.0
 date-released: 2022-10-11

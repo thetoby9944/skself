@@ -11,21 +11,21 @@ print(long_description)
 with open('requirements.txt') as f:
     required = f.read().splitlines()
 
-with open('tfds_defect_detection/__init__.py') as f:
+with open('skself/__init__.py') as f:
     version = f.readlines()[0].split("=")[1].strip().replace('"', "")
 
 
-root_folder = "tfds_defect_detection"
+root_folder = "skself"
 static_folders = ["assets"]  # "scripts"]
 
 
 setup(
     version=version,
-    name='tfds_defect_detection',
-    description='TensorFlow Datasets for Defect Detection',
+    name='skself',
+    description='Self-supervised learning sklearn-style',
     long_description=long_description,
     # scripts=[str((Path(root_folder) / 'scripts' / 'mavis_core.py'))],
-    url='https://github.com/thetoby9944/tfds_defect_detection',
+    url='https://github.com/thetoby9944/skself',
     author='thetoby9944',
     author_email='thetoby@web.de',
     packages=find_packages(),
