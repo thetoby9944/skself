@@ -1,4 +1,4 @@
 tqdm~=4.19
 pydantic~=1.9
 tensorflow
-sklearn
+scikit-learn
