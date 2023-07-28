@@ -1,8 +1,10 @@
 from pathlib import Path
 
+from skself.partial_annotations.lazy_unet import get_model
+
 
 def unit_test():
-    pass
+    lazyUnet = KerasClassifier
 
 
 if __name__ == '__main__':

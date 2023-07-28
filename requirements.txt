@@ -1,4 +1,12 @@
 tqdm~=4.19
 pydantic~=1.9
-tensorflow
 scikit-learn
+segmentation_models
+tfaugmentor
+opencv_python_headless
+Pillow
+rich[jupyter]
+pandas-profiling
+scikit-learn
+matplotlib
+scikit-image
