@@ -4,7 +4,6 @@ import tensorflow as tf
 from typing import Dict, Any
 
 from sklearn.base import TransformerMixin
-from sklearn.metrics import mean_squared_error
 from scikeras.wrappers import BaseWrapper
 
 
