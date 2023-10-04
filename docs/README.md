@@ -96,3 +96,18 @@ managed and slows down documenting.
 
 Generating the references from the bookmarks folder structure has the additional advantage to provide a full markdown scaffold for the literature review section.
 With this process, orderly bookmarking your references write half a literature review for you automatically.   
+
+
+
+### Publish on read-the-docs
+
+1. Go to read thethedocs.org
+2. Login with github
+3. Select the repository
+4. Add and build
+
+### Publish on pip
+
+pip install twine build
+python -m build
+twine upload sdist/*
