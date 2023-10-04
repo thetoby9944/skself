@@ -24,7 +24,7 @@ class TestLazyModel(unittest.TestCase):
         # Create a LazyModel instance that outputs 2 channels and ignores the last channel in the labels
         self.lazy_model = LazyModel(
             sm.Unet('resnet34', input_shape=(256, 256, 3), classes=2),
-            ignore_channel_index=-1
+            ignore_channel_index=2
         )
 
         # Compile the LazyModel with a binary cross-entropy loss and accuracy metric

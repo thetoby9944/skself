@@ -32,7 +32,7 @@ class LazyLossWrapper(tf.keras.losses.Loss):
         y_true, mask = pop_channel(y_true, self.mask_index)
 
         # Apply the mask to y_pred
-        masked_y_pred = y_pred * mask
+        masked_y_pred = y_pred * (1 - mask)
 
         # Calculate the loss using the user-provided loss function
         loss = self.base_loss(y_true, masked_y_pred)
@@ -51,7 +51,7 @@ class LazyMetricWrapper(tf.keras.metrics.MeanMetricWrapper):
         y_true, mask = pop_channel(y_true, self.mask_index)
 
         # Apply the mask to y_pred
-        masked_y_pred = y_pred * mask
+        masked_y_pred = y_pred * (1 - mask)
 
         # Call the metric_fn to update the metric value
         super(LazyMetricWrapper, self).update_state(y_true, masked_y_pred, sample_weight)
@@ -123,3 +123,5 @@ class LazyModel(tf.keras.Model):
     def evaluate(self, *args, **kwargs):
         # Call the call method of the base_unet with the input tensor
         return self.base_unet.evaluate(*args, **kwargs)
+
+
