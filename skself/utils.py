@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 
 import os, sys
-
+import cv2
 
 class _HiddenPrints:
     def __enter__(self):
@@ -40,8 +40,9 @@ def masking(
     return img
 
 
-def rgb_to_onehot(rgb_arr):
-    color_dict = {
+def rgb_to_onehot(rgb_arr, color_dict):
+    if color_dict is None:
+        color_dict = {
         0: (0, 0, 0),
         1: (255, 255, 255)
     }
@@ -125,3 +126,19 @@ def validate_images(path: Path):
 def copy_to_folder(src: Path, target):
     target.parent.mkdir(exist_ok=True, parents=True)
     shutil.copy(src, target)
+
+
+
+
+def blend_merge(foreground, background, mask):
+    mask = cv2.GaussianBlur(
+        np.array(mask * 255, dtype=np.uint8),
+        tuple([3] * 2), 0  # mask.shape[0] // 16 + 1
+    )
+    mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
+    mask = mask.astype('float32') / 255
+    foreground = cv2.multiply(foreground, mask, dtype=cv2.CV_8U)
+    background = cv2.multiply(background, (1 - mask), dtype=cv2.CV_8U)
+    output = cv2.add(foreground, background)
+    return output
+

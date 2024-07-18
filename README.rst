@@ -17,8 +17,10 @@ UNDER CONSTRUCTION
    :alt: PyPI - Python Version
 
 ========================================
-Self-supervised learning sklearn-style
+skself
 ========================================
+
+**Focusing on self- and semi-supervised learning in the style of sklearn and tensorflow**
 
 To directly jump into the code look at the sample notebook
 

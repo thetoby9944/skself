@@ -32,7 +32,8 @@ class LazyLossWrapper(tf.keras.losses.Loss):
         y_true, mask = pop_channel(y_true, self.mask_index)
 
         # Apply the mask to y_pred
-        masked_y_pred = y_pred * (1 - mask)
+        masked_y_pred = y_pred  *  (tf.reduce_sum(y_true, axis=-1, keepdims=True)) # (1- mask)
+        y_true = y_true # * (1 - mask) + mask
 
         # Calculate the loss using the user-provided loss function
         loss = self.base_loss(y_true, masked_y_pred)
@@ -51,16 +52,17 @@ class LazyMetricWrapper(tf.keras.metrics.MeanMetricWrapper):
         y_true, mask = pop_channel(y_true, self.mask_index)
 
         # Apply the mask to y_pred
-        masked_y_pred = y_pred * (1 - mask)
+        masked_y_pred = y_pred  * (tf.reduce_sum(y_true, axis=-1, keepdims=True)) # (1 - mask) #+ mask
+        y_true = y_true # * (1 - mask) + mask
 
         # Call the metric_fn to update the metric value
-        super(LazyMetricWrapper, self).update_state(y_true, masked_y_pred, sample_weight)
+        super(LazyMetricWrapper, self).update_state(y_true, masked_y_pred)
 
 
 # Define the custom U-Net wrapper class
-class LazyModel(tf.keras.Model):
+class LazySegmentationModel(tf.keras.Model):
     def __init__(self, base_model, ignore_channel_index=-1, **kwargs):
-        super(LazyModel, self).__init__(**kwargs)
+        super(LazySegmentationModel, self).__init__(**kwargs)
         self.base_unet = base_model
         self.mask_index = ignore_channel_index
 
@@ -68,12 +70,12 @@ class LazyModel(tf.keras.Model):
             self,
             optimizer="rmsprop",
             loss=None,
-            metrics=None,
             loss_weights=None,
+            metrics=None,
             weighted_metrics=None,
-            run_eagerly=None,
-            steps_per_execution=None,
-            jit_compile=None,
+            run_eagerly=False,
+            steps_per_execution=1,
+            jit_compile="auto",
             **kwargs
     ):
         if isinstance(loss, str):
