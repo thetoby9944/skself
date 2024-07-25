@@ -7,6 +7,7 @@ This work is still under construction and grows overtime as I will continue to p
    :align: center
    :alt:
    :scale: 20 %
+   :width: 50px
 
 
 
@@ -48,13 +49,13 @@ The goal of this project is to explore methods to reduce the amount of effort re
 
          
 
-+--------+-------+-----+
-| Method | Paper | Link |
-+========+=======+=====+
-| Partial Annotations    | Lazy Labels for Chicken Segmentation   | https://www.sciencedirect.com/science/article/pii/S1877050923014163 |
-| Multimodal Large Language Models    | Low-shot Visual Anomaly Detection with Multimodal Large Language Models   |  in press |
-| Embedding Training    | Chicks4FreeID   | in review |
-+--------+-------+-----+
++----------------------------------------+--------------------------------------------------------------------------+---------------------------------------------------------------------+
+| Method                                 | Paper                                                                    | Link                                                                |
++========================================+==========================================================================+=====================================================================+
+| Partial Annotations                    | Lazy Labels for Chicken Segmentation                                     | https://www.sciencedirect.com/science/article/pii/S1877050923014163 |
+| Multimodal Large Language Models       | Low-shot Visual Anomaly Detection with Multimodal Large Language Models  | in press                                                            |
+| Embedding Training                     | Chicks4FreeID                                                            | under review                                                        |
++----------------------------------------+--------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 
 Install
@@ -107,7 +108,7 @@ Tobias Schiele et al. (2023). skself https://github.com/thetoby9944/skself.
 
 This work is funded by
 
-.. figure:: skself/assets/images/acks.png
+.. figure:: skself/assets/images/acks.jpeg
    :align: center
    :alt:
    :scale: 20 %
