@@ -1,6 +1,4 @@
 
-This work is still under construction and grows overtime as I will continue to pursue my PhD based on the work that has been done so far on this project.
-
 
 
 .. figure:: skself/assets/images/logo.png
@@ -44,21 +42,20 @@ The goal of this project is to explore methods to reduce the amount of effort re
 
          skself.embedding_training.embedding_benchmark.Baseline
 
-         
-         
+Publications
+------------
 
-         
-+----------------------------------------+--------------------------------------------------------------------------+---------------------------------------------------------------------+
-| Method                                 | Paper                                                                    | Link                                                                |
-+========================================+==========================================================================+=====================================================================+
-| Partial Annotations                    | Lazy Labels for Chicken Segmentation                                     | https://www.sciencedirect.com/science/article/pii/S1877050923014163 |
-+----------------------------------------+--------------------------------------------------------------------------+---------------------------------------------------------------------+
-| Multimodal Large Language Models       | Low-shot Visual Anomaly Detection with Multimodal Large Language Models  | in press                                                            |
-+----------------------------------------+--------------------------------------------------------------------------+---------------------------------------------------------------------+
-| Embedding Training                     |                                                                          | under review                                                        |
-+----------------------------------------+--------------------------------------------------------------------------+---------------------------------------------------------------------+
++----------------------------------+------------------------------------------------------------------------+-----------+
+| Method                           | Paper                                                                  | Link      |
++==================================+========================================================================+===========+
+| Partial Annotations              | Lazy Labels for Segmentation                                           | `Link 1`_ |
++----------------------------------+------------------------------------------------------------------------+-----------+
+| Multimodal Large Language Models | Low-shot Visual Anomaly Detection with Multimodal Large Language       | `Link 2`_ |
+|                                  | Models                                                                 |           |
++----------------------------------+------------------------------------------------------------------------+-----------+
 
-
+.. _Link 1: https://www.sciencedirect.com/science/article/pii/S1877050923014163
+.. _Link 2: https://www.researchgate.net/publication/386216719_Low-shot_Visual_Anomaly_Detection_with_Multimodal_Large_Language_Models
 
 
 
